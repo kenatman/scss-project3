@@ -3,3 +3,70 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: $bg;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-rows: 1fr 4fr 1fr;
+  gap: 1px;
+  & > * {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $bg;
+    font-size: 25px;
+    text-transform: uppercase;
+  }
+}
+
+.number__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  height: 100%;
+  align-items: stretch;
+  background-color: $bg;
+
+  .number {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.5s linear, background-color 0.5s linear;
+    &:hover {
+      background-color: $bg;
+      color: white;
+    }
+  }
+}
+
+.centerImage {
+  background-image: url("https://images.unsplash.com/photo-1611955166137-e3f719974a0a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80");
+  background-size: cover;
+}
+
+.scrolling {
+  white-space: nowrap;
+  overflow: hidden;
+  span {
+    animation: super 3s linear infinite;
+  }
+}
+
+@keyframes super {
+  0% {
+    transform: translateX(-100px);
+  }
+  50% {
+    transform: translateX(150px);
+  }
+  100% {
+    trasnform: translateX(100px);
+  }
+}
